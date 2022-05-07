@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form_style">
+    <hr>
+    <h3>Доступные сеансы на фильм</h3>
+    <div class="films_form_style" align="center">
+        <img src={{ film_data[0] }}
+           alt="здесь должна была быть картинка, но не нашлась" width="200" height="300">
+        <div class="text-block">
+           <h2 align="center">{{ film_data[1] }}</h2>
+           <h5>{{ film_data[2] }}</h5>
+            {% if film_data[3] != None %}
+            <h6>Продолжительность: {{ film_data[3] }}</h6>
+            {% endif %}
+            {% if film_data[4] != None %}
+            <h6>Год выпуска: {{ film_data[4] }}</h6>
+            {% endif %}
+            {% if film_data[5] != None %}
+            <h6>Жанр: {{ film_data[5] }}</h6>
+            {% endif %}
+        </div>
+        <table border="1">
+            <tr>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Цена</th>
+            <th>Свободных мест</th>
+            <th>Купить</th>
+        </tr>
+        {% for date in dates %}
+        {% for s in sessions[date] %}
+        <tr>
+            <td>{{ date }}</td>
+            <td>{{ s[0] }}</td>
+            <td>{{ s[1] }}</td>
+            <td>{{ s[2] }}</td>
+            <td><p><a href="http://127.0.0.1:8080/ticket/{{ s[0] }}/{{ date }}/{{ s[2] }}/{{ s[1] }}" class="red_color">Покупка</a>
+            </p></td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+   </div>
+</div>
+{% endblock %}
+
+

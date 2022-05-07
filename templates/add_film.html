@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mx-auto" style="width: 400px;">
+    <h1>Добавление фильма</h1>
+</div>
+<div>
+    <form class="login_form" method="post">
+        <input type="id" class="form-control" id="id" placeholder="id фильма" name="id">
+        <input type="title" class="form-control" id="title" placeholder="Название" name="title">
+        <div class="form-group">
+            <label for="classSelect">Жанр</label>
+            <select class="form-control" id="classSelect" name="genre">
+                <option>Комедия</option>
+                <option>Мультфильмы</option>
+                <option>Ужасы</option>
+                <option>Фантастика</option>
+                <option>Триллеры</option>
+                <option>Боевики</option>
+                <option>Мелодрамы</option>
+                <option>Детектив</option>
+                <option>Приключения</option>
+                <option>Фентези</option>
+                <option>Военные</option>
+                <option>Семейные</option>
+                <option>Аниме</option>
+                <option>Исторические</option>
+                <option>Драмы</option>
+                <option>Документальные</option>
+                <option>Детские</option>
+                <option>Криминал</option>
+                <option>Биографии</option>
+                <option>Вестерны</option>
+                <option>Фильмы-нуар</option>
+                <option>Спортивные</option>
+                <option>Реальное ТВ</option>
+                <option>Короткометражки</option>
+                <option>Музыкальные</option>
+                <option>Мюзиклы</option>
+                <option>Ток-шоу</option>
+                <option>Новости</option>
+                <option>Игры</option>
+                <option>Церемонии</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="about">Описание фильма</label>
+            <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+        </div>
+        <input type="duration" class="form-control" id="duration" placeholder="Продолжительность, минут" name="duration">
+        <input type="img" class="form-control" id="img" placeholder="Ссылка на картинку" name="img">
+        <input type="year" class="form-control" id="year" placeholder="Год выхода" name="year">
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+{% endblock %}

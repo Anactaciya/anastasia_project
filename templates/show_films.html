@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form_style">
+    <hr>
+    {% for date in Sessions %}
+    <h3>Доступные сеансы на {{ date }}</h3>
+    {% for film in Sessions[date] %}
+    <div class="films_form_style" align="center">
+        <img src={{ Sessions[date][film][0] }}
+           alt="здесь должна была быть картинка, но не нашлась" width="200" height="300">
+        <div class="text-block">
+           <h2 align="center">{{ Sessions[date][film][1] }}</h2>
+           <h5>{{ Sessions[date][film][2] }}</h5>
+            <form action="sessions/{{ film }}" target="_blank">
+              <button class="red_color2">Посмотреть доступные сеансы</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+    {% endfor %}
+
+
+</div>
+{% endblock %}

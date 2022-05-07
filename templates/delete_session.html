@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mx-auto" style="width: 400px;">
+    <h1>Удалить сеанс</h1>
+</div>
+<div>
+    <form class="login_form" method="post">
+        <div class="form-group">
+            <label for="classSelect">Название фильма</label>
+            <select class="form-control" id="classSelect" name="film">
+                {% for i in titles %}
+                <option>{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="date" class="form-control" id="date" placeholder="Дата показа (в формате год-номер месяца-день месяца)" name="date">
+        <input type="time" class="form-control" id="time" placeholder="Время показа" name="time">
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+{% endblock %}
